@@ -1,0 +1,399 @@
+/* ==================== */
+/* ESTILOS BASE - JELOU */
+/* ==================== */
+
+:root {
+    --color-primario: #6d1e24;
+    --color-secundario: #050106;
+    --color-dorado: #c5a47e;
+    --color-texto: #333;
+    --color-fondo: linear-gradient(145deg, #6d1e24 0%, #050106 100%);
+    --sombra-intensa: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --borde-dorado: 1px solid rgba(197, 164, 126, 0.3);
+}
+
+body {
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==================== */
+/* CONTENEDOR PRINCIPAL */
+/* ==================== */
+
+.contenedor_art1 {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 20px;
+    box-shadow: var(--sombra-intensa);
+    backdrop-filter: blur(10px);
+    border: var(--borde-dorado);
+    transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden;
+}
+
+.contenedor_art1::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent 45%,
+        rgba(197, 164, 126, 0.1) 50%,
+        transparent 55%);
+    animation: jelou-glow 8s infinite linear;
+    z-index: -1;
+}
+
+@keyframes jelou-glow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==================== */
+/* MENÚ DE NAVEGACIÓN */
+/* ==================== */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.9);
+    margin: 0 auto 3rem;
+    width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: var(--borde-dorado);
+}
+
+.menu a {
+    color: var(--color-dorado);
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--color-dorado);
+    transition: all 0.3s ease;
+}
+
+.menu a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+/* ==================== */
+/* TÍTULOS Y ENCABEZADOS */
+/* ==================== */
+
+h1, h2 {
+    color: var(--color-primario);
+    position: relative;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    border-left: 5px solid var(--color-dorado);
+    text-shadow: 2px 2px 4px rgba(109, 30, 36, 0.1);
+}
+
+h2 {
+    font-size: 2rem;
+    border-left: 3px solid var(--color-dorado);
+}
+
+/* ==================== */
+/* IMÁGENES */
+/* ==================== */
+
+img {
+    border: 3px solid var(--color-dorado);
+    border-radius: 15px;
+    margin: 2rem auto;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: all 0.5s ease;
+    box-shadow: var(--sombra-intensa);
+    max-width: 100%;
+    height: auto;
+}
+
+img:hover {
+    transform: perspective(1000px) rotateY(5deg) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ==================== */
+/* TABLAS */
+/* ==================== */
+
+.table-responsive {
+    overflow-x: auto;
+    margin: 2rem 0;
+    border-radius: 10px;
+    box-shadow: var(--sombra-intensa);
+}
+
+table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-dorado);
+}
+
+th {
+    background-color: var(--color-primario);
+    color: white;
+    font-weight: 700;
+}
+
+/* ==================== */
+/* FOOTER */
+/* ==================== */
+
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    margin-top: 50px;
+    border-top: var(--borde-dorado);
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+.text-container p {
+    color: var(--color-dorado);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ==================== */
+/* DISEÑO RESPONSIVE */
+/* ==================== */
+
+@media (max-width: 1200px) {
+    .contenedor_art1 {
+        margin: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+    
+    .menu a {
+        margin: 0.5rem;
+        font-size: 0.95rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .contenedor_art1 {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        border-radius: 10px;
+        width: 95%;
+    }
+    
+    .menu a {
+        padding: 0.3rem 0.7rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contenedor_art1::before {
+        animation-duration: 12s;
+    }
+    
+    .container-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .logo {
+        max-width: 80px;
+    }
+}
+
+/* Estilos para el contenedor de filtros */
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px auto;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Estilos para los botones de filtro */
+  .filtro-btn {
+    background: var(--color-dorado);
+    color: var(--color-secundario);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .filtro-btn:hover {
+    background: var(--color-primario);
+    transform: scale(1.05);
+  }
+  
+  .filtro-btn.active, 
+  .filtro-btn:focus {
+    background: var(--color-primario);
+    color: #fff;
+    outline: none;
+  }
+  
+
+/* Contenedor para imagen responsiva */
+.contenedor-imagen {
+    width: 100%;
+    height: 500px;            /* Altura fija para PC; ajústala según tus necesidades */
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+  }
+  
+  .contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;      /* Muestra la imagen completa sin recortes */
+  }
+  
+  /* Opcional: Ajustes para dispositivos móviles */
+  @media (max-width: 768px) {
+    .contenedor-imagen {
+      height: auto;           /* La altura se ajusta según la imagen */
+    }
+    
+    .contenedor-imagen img {
+      height: auto;
+    }
+  }
+
+  /* ==================== */
+/* ESTILOS PARA CONTENEDORES DE TITULOS Y CONTENIDO */
+/* ==================== */
+
+/* Contenedor para títulos con fondo blanco */
+.titulo-container {
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contenedor interno del contenido (texto) con fondo blanco */
+  .articulo-contenido {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* (El resto de tu CSS ya existente permanece igual) */
+
+      /* ==================== */
+    /* ESTILOS PARA CONTENEDORES Y TEXTO */
+    /* ==================== */
+    
+    /* Contenedor de cada artículo */
+    .contenedor-articulos .articulo {
+        background: transparent; /* Se deja transparente para que resalte el contenedor interno */
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      
+      /* Contenedor para las imágenes responsivas */
+      .contenedor-imagen {
+        width: 100%;
+        height: 500px; /* Altura fija en PC; ajústala según necesites */
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 15px;
+      }
+      
+      .contenedor-imagen img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Usa 'cover' si prefieres que la imagen llene todo el contenedor */
+        border-radius: 10px;
+      }
+      
+      /* Ajustes para dispositivos móviles */
+      @media (max-width: 768px) {
+        .contenedor-imagen {
+          height: auto;
+        }
+        
+        .contenedor-imagen img {
+          height: auto;
+        }
+      }

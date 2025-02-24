@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yusei+Magic&display=swap');
+/* footer.css */
+
+/* Estilo para la fuente Yusei Magic */
+.yusei-magic-regular {
+    font-family: "Yusei Magic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Estilo para la fuente Montserrat con peso variable */
+.montserrat-bold {
+    font-family: "Montserrat", serif;
+    font-weight: 500; /* Puedes ajustar el peso según lo necesario */
+    font-style: normal;
+}
+body {
+    background-color: #050106;
+
+} 
+
+.contenedor_1{
+    background: linear-gradient(to bottom, #6d1e24, #050106);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 70%;
+    overflow: hidden;
+}
+
+.titulo {
+    margin-top: 0;
+    font-size: 4rem;
+    font-family: "Yusei Magic", sans-serif;
+}
+
+/* Estilo para h2.sud */
+.sud {
+    font-family: "Montserrat", serif;
+    font-weight: 520; /* Puedes ajustar el peso según lo necesario */
+    font-size: 2rem;
+    margin-top: 1px; /* Reduce el margen superior */ 
+    animation: fadeIn 3s ease-in-out;
+}
+
+.titulo h1 {
+    font-size: 2rem;
+    margin: 0;
+    animation: brillo 3s infinite alternate;
+}
+
+.titulo h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.pocima1 {
+    width: 150px; /* Ajusta el tamaño según lo que necesites */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Contenedor del caldero */
+.caldero-container {
+    position: relative;
+    width: 95%; /* Ajuste dinámico según tamaño de pantalla */
+    height: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.caldero {
+    width: 50%; /* Ajuste a tamaño de contenedor */
+    position: relative;
+    z-index: 1;
+} 
+
+/* Animación de vibración */
+@keyframes vibrar {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-3px, 3px); }
+    50% { transform: translate(3px, -3px); }
+    75% { transform: translate(-3px, -3px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Estilo para el caldero con vibración al hover */
+.caldero {
+    transition: transform 0.2s ease-in-out;
+}
+
+.caldero:hover {
+    animation: vibrar 0.3s infinite;
+}
+
+
+/* Estilo de las burbujas */
+.burbuja {
+    position: absolute;
+    bottom: 80%;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(173, 216, 230, 0.8);
+    border-radius: 50%;
+    animation: burbujas 4s infinite ease-in-out;
+}
+
+.burbuja:nth-child(2) { animation-delay: 0.5s; }
+.burbuja:nth-child(3) { animation-delay: 1s; }
+.burbuja:nth-child(4) { animation-delay: 1.5s; }
+.burbuja:nth-child(5) { animation-delay: 2s; }
+
+@keyframes burbujas {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-150px) scale(1.5); opacity: 0; }
+}
+
+/* Menú de navegación */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    background-color: #6d1e24;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #ffffff;
+    color: #6d1e24;
+    transform: scale(1.1);
+}
+
+.imagen-contenedor {
+    position: relative; /* Necesario para posicionar el texto sobre la imagen */
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+
+.imagen-contenedor img {
+    max-width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
+    display: block; /* Elimina el espacio en blanco por defecto de las imágenes en línea */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.texto-sobre-imagen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el texto horizontal y verticalmente */
+    color: #fff; /* Color del texto (ajusta según tu diseño) */
+    background-color: rgba(105, 104, 104, 0.5); /* Fondo semitransparente para el texto */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.texto-sobre-imagen:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro */
+    box-shadow: 0px 5px 10px rgba(162, 158, 158, 0.3);
+}
+
+.servicios-container {
+    text-align: center;
+    margin: 30px 0; /* Ajusta el margen superior e inferior según sea necesario */
+    background: linear-gradient(to bottom, #6d1e24, #050106);
+}
+  
+  .titulo-servicios {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ddd;
+    /* Agrega estilos adicionales para el título, como color, fuente, etc. */
+  }
+  
+  .servicios-listas {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .lista-servicios {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .lista-servicios li {
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .lista-servicios li:hover {
+    background-color: #ddd;
+  }
+
+/* Medios de comunicación responsivos */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 2.5rem;
+    }
+
+    .sud {
+        font-size: 1.8rem;
+    }
+
+    .menu a {
+        padding: 8px 15px;
+    }
+
+    .caldero-container {
+        width: 90%;
+    }
+
+    .caldero {
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 2rem;
+    }
+
+    .sud {
+        font-size: 1.3rem;
+    }
+
+    .menu a {
+        padding: 6px 12px;
+    }
+
+    .caldero-container {
+        width: 100%;
+    }
+
+    .caldero {
+        width: 80%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

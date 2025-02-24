@@ -1,0 +1,195 @@
+/* historia.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #6d1e24, #050106); /* Fondo gris claro */
+  display: flex;
+  flex-direction: column;
+  min-height: 130vh;
+}
+
+.hero {
+  height: 15vh; /* 15% de la altura total */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: #e8e4e4d4; /* Color del título */
+}
+
+.main-content {
+  height: 100vh; /* 70% de la altura total */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacio entre el carrusel y el texto */
+  align-items: center;
+}
+
+.carousel-container {
+  width: 80%; 
+  height: 70vh; /* 45% de la altura de main-content */
+  position: relative;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.carousel-buttons button {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.text-container {
+  width: 80%;
+  height: 30vh; /* 25% de la altura de main-content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #d2d2d2;
+  margin-bottom: 10px;
+}
+
+/* footer.css */
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #6d1e24, #050106); /* Fondo gris claro para contraste sutil */
+  padding: 20px; /* Espacio interno para el contenido */
+}
+
+.logo-container {
+  flex-basis: 20%; /* Ajusta el ancho del logo */
+}
+
+.text-containerr {
+  flex-basis: 80%;
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+.text-container p {
+  font-size: 16px; /* Tamaño de la fuente */
+  color: #f5eaea; /* Color rojo suave para contraste */
+}
+
+.logo {
+  max-width: 90px; /* Ancho máximo en píxeles para pantallas medianas */
+  height: auto; /* Mantener las proporciones */
+  width: 30%; /* Ajustar el ancho al 15% del contenedor para pantallas más grandes */
+}
+
+  /* ... (resto de tu CSS) ... */
+    
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+        .main-container {
+            width: 90%;
+        }
+    
+        .main-title {
+            font-size: 2.5rem;
+        }
+    
+        .profile-box, .interests-box, .skills-box, .education-box, .projects-box, .goals-box, .values-box {
+            padding: 15px;
+        }
+    
+        .image-container {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .image-box {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+    
+        h2 {
+            font-size: 1.3rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .main-container {
+            width: 95%;
+        }
+    
+        .main-title {
+            font-size: 2rem;
+        }
+    
+        .profile-box, .interests-box, .skills-box, .education-box, .projects-box, .goals-box, .values-box {
+            padding: 10px;
+        }
+    
+        .image-container {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .image-box {
+            width: 90%;
+        }
+    
+        h2 {
+            font-size: 1.2rem;
+        }
+    
+        ul {
+            margin-left: 15px;
+        }
+    }
+    

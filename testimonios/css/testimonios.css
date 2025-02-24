@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background: linear-gradient(to bottom, #6d1e24, #050106);
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    color: #544d4dcd;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(219, 217, 217, 0.938);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #000000af;
+}
+
+.testimonial-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+    border: 3px solid #ddd;
+    padding: 2px;
+}
+
+/* footer.css */
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #6d1e24, #050106); /* Fondo gris claro para contraste sutil */
+    padding: 20px; /* Espacio interno para el contenido */
+}
+
+.logo-container {
+    flex-basis: 20%; /* Ajusta el ancho del logo */
+}
+
+.text-container {
+    flex-basis: 80%;
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.text-container p {
+    font-size: 16px; /* Tamaño de la fuente */
+    color: #edc3c3ca; /* Color rojo suave para contraste */
+}
+
+.logo {
+    max-width: 90px; /* Ancho máximo en píxeles para pantallas medianas */
+    height: auto; /* Mantener las proporciones */
+    width: 30%; /* Ajustar el ancho al 15% del contenedor para pantallas más grandes */
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .container {
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .testimonial {
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .testimonial-img {
+        margin-left: 20px;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 60%;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .testimonial {
+        padding: 30px;
+    }
+
+    .testimonial-img {
+        width: 100px;
+        height: 100px;
+    }
+}                                                                                                                

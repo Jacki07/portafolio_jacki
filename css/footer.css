@@ -1,0 +1,28 @@
+/* footer.css */
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #6d1e24, #050106); /* Fondo gris claro para contraste sutil */
+    padding: 20px; /* Espacio interno para el contenido */
+}
+
+.logo-container {
+    flex-basis: 20%; /* Ajusta el ancho del logo */
+}
+
+.text-container {
+    flex-basis: 80%;
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.text-container p {
+    font-size: 16px; /* Tamaño de la fuente */
+    color: #ad8585; /* Color rojo suave para contraste */
+}
+
+.logo {
+    max-width: 90px; /* Ancho máximo en píxeles para pantallas medianas */
+    height: auto; /* Mantener las proporciones */
+    width: 30%; /* Ajustar el ancho al 15% del contenedor para pantallas más grandes */
+}
