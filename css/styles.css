@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yusei+Magic&display=swap');
-/* footer.css */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 /* Estilo para la fuente Yusei Magic */
 .yusei-magic-regular {
@@ -10,7 +9,7 @@
 
 /* Estilo para la fuente Montserrat con peso variable */
 .montserrat-bold {
-    font-family: "Montserrat", serif;
+    font-family: "Playfair Display", serif;
     font-weight: 500; /* Puedes ajustar el peso según lo necesario */
     font-style: normal;
 }
@@ -36,12 +35,22 @@ body {
 .titulo {
     margin-top: 0;
     font-size: 4rem;
-    font-family: "Yusei Magic", sans-serif;
+    font-family: 'MedievalSharp', sans-serif;
+}
+
+.texto_sobre_imagen{
+    font-family: 'MedievalSharp', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:#fff;
+    font-size: 2em;
 }
 
 /* Estilo para h2.sud */
 .sud {
-    font-family: "Montserrat", serif;
+    font-family: "Playfair Display", serif;
     font-weight: 520; /* Puedes ajustar el peso según lo necesario */
     font-size: 2rem;
     margin-top: 1px; /* Reduce el margen superior */ 

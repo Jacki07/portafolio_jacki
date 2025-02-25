@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=MedievalSharp&display=swap');
+
+/* ==================== */
+/* ESTILOS PARA FUENTES */
+/* ==================== */
+/* Fuente MedievalSharp para títulos */
+.titulos {
+    font-family: 'MedievalSharp', sans-serif;
+}
+
+/* Fuente Montserrat para el resto del texto */
+.texto {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ==================== */
+/* RESET Y ESTILOS GLOBALES */
+/* ==================== */
 * {
     margin: 0;
     padding: 0;
@@ -5,28 +23,45 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
     background: linear-gradient(to bottom, #6d1e24, #050106);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
+/* Aplica MedievalSharp a todos los headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'MedievalSharp', sans-serif;
     text-align: center;
-    color: #544d4dcd;
+    color: white;
+    margin-bottom: 2rem;
 }
 
 h1 {
     font-size: 2.5rem;
-    margin-bottom: 2rem;
 }
 
+/* ==================== */
+/* CONTENEDOR PRINCIPAL */
+/* ==================== */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffffcd;
+}
+
+/* ==================== */
+/* TESTIMONIAL */
+/* ==================== */
 .testimonial {
     background-color: #fff;
     padding: 20px;
     margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(219, 217, 217, 0.938);
+    box-shadow: 0 4px 8px rgba(219, 217, 217, 0.94);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -34,7 +69,7 @@ h1 {
     text-align: center;
 }
 
-h2 {
+.testimonial h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
@@ -42,7 +77,7 @@ h2 {
 .text {
     font-size: 1rem;
     margin-bottom: 15px;
-    color: #000000af;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .testimonial-img {
@@ -55,72 +90,253 @@ h2 {
     padding: 2px;
 }
 
-/* footer.css */
+/* ==================== */
+/* FOOTER */
+/* ==================== */
 .container-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to bottom, #6d1e24, #050106); /* Fondo gris claro para contraste sutil */
-    padding: 20px; /* Espacio interno para el contenido */
+    background: linear-gradient(to bottom, #6d1e24, #050106);
+    padding: 20px;
 }
 
 .logo-container {
-    flex-basis: 20%; /* Ajusta el ancho del logo */
+    flex-basis: 20%;
 }
 
 .text-container {
     flex-basis: 80%;
-    text-align: center; /* Centra el texto horizontalmente */
+    text-align: center;
 }
 
 .text-container p {
-    font-size: 16px; /* Tamaño de la fuente */
-    color: #edc3c3ca; /* Color rojo suave para contraste */
+    font-size: 16px;
+    color: #edc3c3ca;
 }
 
 .logo {
-    max-width: 90px; /* Ancho máximo en píxeles para pantallas medianas */
-    height: auto; /* Mantener las proporciones */
-    width: 30%; /* Ajustar el ancho al 15% del contenedor para pantallas más grandes */
+    max-width: 90px;
+    height: auto;
+    width: 30%;
 }
 
-/* Media Queries */
-@media (min-width: 768px) {
-    .container {
-        width: 70%;
-    }
+/* ==================== */
+/* MENÚ DE NAVEGACIÓN */
+/* ==================== */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1.5rem 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 1px solid rgba(197, 164, 126, 0.3);
+}
 
-    h1 {
-        font-size: 3rem;
-    }
+.menu a {
+    font-family: "Montserrat", sans-serif;
+    color: #c5a47e;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
-    .testimonial {
-        flex-direction: row;
-        justify-content: center;
-        text-align: left;
-    }
+.menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #c5a47e;
+    transition: all 0.3s ease;
+}
 
-    .testimonial-img {
-        margin-left: 20px;
-        margin-top: 0;
+.menu a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+/* Quitar efecto hover al primer enlace (Inicio/Bienvenidos) */
+.menu a:first-child:hover::before {
+    width: 0 !important;
+}
+.menu a:first-child:hover {
+    transform: none !important;
+    background: none;
+}
+
+/* MENÚ RESPONSIVE */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .menu a {
+        margin: 0.5rem 0;
+        font-size: 1rem;
     }
 }
 
-@media (min-width: 1024px) {
-    .container {
-        width: 60%;
-    }
+/* ==================== */
+/* CONTENEDOR DE IMÁGENES CON TEXTO OVERLAY */
+/* ==================== */
+.imagen-contenedor {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
 
+.imagen-contenedor img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.texto-sobre-imagen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'MedievalSharp', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.texto-sobre-imagen:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* ==================== */
+/* CONTENEDOR PRINCIPAL (ARTÍCULO) Y CONTENIDO BLANCO */
+/* ==================== */
+.contenedor_art1 {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: rgba(255,255,255,0.97);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(197,164,126,0.3);
+    transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden;
+}
+
+.contenedor_art1::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 45%, rgba(197,164,126,0.1) 50%, transparent 55%);
+    animation: jelou-glow 8s infinite linear;
+    z-index: -1;
+}
+
+@keyframes jelou-glow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.contenido-blanco {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ==================== */
+/* FOOTER */
+/* ==================== */
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #6d1e24, #050106);
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto 0;
+    color: white;
+}
+
+.logo-container {
+    flex-basis: 20%;
+    text-align: center;
+}
+
+.text-container {
+    flex-basis: 80%;
+    text-align: center;
+}
+
+.text-container p {
+    font-size: 16px;
+    color: #e8bfbfe2;
+}
+
+.logo {
+    max-width: 90px;
+    height: auto;
+    width: 30%;
+}
+
+/* ==================== */
+/* MEDIA QUERIES */
+/* ==================== */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
     h1 {
-        font-size: 3.5rem;
+        font-size: 2rem;
     }
+    .gallery {
+        gap: 15px;
+    }
+    .gallery-item img {
+        max-width: 100%;
+    }
+}
 
-    .testimonial {
-        padding: 30px;
-    }
-
-    .testimonial-img {
-        width: 100px;
-        height: 100px;
-    }
-}                                                                                                                
+/* ==================== */
+/* CONTENEDOR RESPONSIVO PARA VIDEOS */
+/* ==================== */
+.video-responsive {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

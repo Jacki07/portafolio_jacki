@@ -1,3 +1,9 @@
+/* Importa la tipografía MedievalSharp */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+/* ==================== */
+/* ESTILOS GLOBALES */
+/* ==================== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,19 +14,28 @@ body {
     background: linear-gradient(to bottom, #6d1e24, #050106);
 }
 
+/* Aplica MedievalSharp a todos los headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'MedievalSharp', sans-serif;
+}
+
+/* Título principal */
 h1 {
     margin: 20px 0;
     font-size: 2.5rem;
-    color: #d1c9c9;
+    color: #ffffff;
 }
 
+/* ==================== */
+/* GALERÍA */
+/* ==================== */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     width: 90%;
     max-width: 1200px;
-    color: #9b9797cb;
+    color: #ffffffcb;
 }
 
 .gallery-item {
@@ -34,55 +49,119 @@ h1 {
     max-width: 333px;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.654);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.65);
+    margin-bottom: 20px;
 }
 
 .gallery-item p {
     margin-top: 10px;
     font-size: 1rem;
-    color: #e6dcdc;
+    color: #ffffff;
     text-align: center;
 }
 
-/* footer.css */
+/* ==================== */
+/* FOOTER */
+/* ==================== */
 .container-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to bottom, #6d1e24, #050106); /* Fondo gris claro para contraste sutil */
-    padding: 20px; /* Espacio interno para el contenido */
+    background: linear-gradient(to bottom, #6d1e24, #050106);
+    padding: 20px;
 }
 
 .logo-container {
-    flex-basis: 20%; /* Ajusta el ancho del logo */
+    flex-basis: 20%;
 }
 
 .text-container {
     flex-basis: 80%;
-    text-align: center; /* Centra el texto horizontalmente */
+    text-align: center;
 }
 
 .text-container p {
-    font-size: 16px; /* Tamaño de la fuente */
-    color: #ebe3e3d2; /* Color rojo suave para contraste */
+    font-size: 16px;
+    color: #ebe3e3d2;
 }
 
 .logo {
-    max-width: 90px; /* Ancho máximo en píxeles para pantallas medianas */
-    height: auto; /* Mantener las proporciones */
-    width: 30%; /* Ajustar el ancho al 15% del contenedor para pantallas más grandes */
+    max-width: 90px;
+    height: auto;
+    width: 30%;
 }
 
+/* ==================== */
+/* MEDIA QUERIES PARA GALERÍA Y FOOTER */
+/* ==================== */
 @media (max-width: 600px) {
     h1 {
         font-size: 2rem;
     }
-
+    
     .gallery {
         gap: 15px;
     }
-
+    
     .gallery-item img {
         max-width: 100%;
+    }
+}
+
+/* ==================== */
+/* MENÚ DE NAVEGACIÓN */
+/* ==================== */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.9);
+    margin: 0 auto 3rem;
+    width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(197, 164, 126, 0.3);
+}
+
+.blanco{
+    color: white;
+}
+.menu a {
+    color: #c5a47e;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #c5a47e;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+/* MENÚ RESPONSIVE */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .menu a {
+        margin: 0.5rem 0;
+        font-size: 1rem;
     }
 }

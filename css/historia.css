@@ -1,195 +1,310 @@
-/* historia.css */
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Yusei+Magic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+/* ==================== */
+/* RESET Y ESTILOS GLOBALES */
+/* ==================== */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom, #6d1e24, #050106); /* Fondo gris claro */
-  display: flex;
-  flex-direction: column;
-  min-height: 130vh;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom, #6d1e24, #050106);
+  /* Se elimina el background-color ya que se usa el gradient */
+  color: #fff;
+  padding: 20px;
+  line-height: 1.6;
 }
 
-.hero {
-  height: 15vh; /* 15% de la altura total */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ==================== */
+/* HEADINGS (YUSEI MAGIC) */
+/* ==================== */
+h1, h2, h3, h4, h5, h6 {
+font-family: 'MedievalSharp', sans-serif;
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
 }
 
-.hero-title {
+.categoria h5 {
+    color: #000;
+    font-size: 1.5em;
+  }
+  
+
+h1 {
   font-size: 2.5rem;
-  color: #e8e4e4d4; /* Color del título */
 }
 
-.main-content {
-  height: 100vh; /* 70% de la altura total */
+/* ==================== */
+/* CONTENEDOR DE CATEGORÍA */
+/* ==================== */
+.categoria {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  color: #333;
+  padding: 20px;
+  margin: 20px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria:hover {
+  transform: scale(1.03);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ==================== */
+/* IMÁGENES */
+/* ==================== */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+}
+
+/* ==================== */
+/* RESPONSIVIDAD */
+/* ==================== */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+  
+  .categoria {
+    padding: 15px;
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .categoria {
+    padding: 10px;
+    margin: 10px 0;
+  }
+}
+
+/* ==================== */
+/* MENÚ DE NAVEGACIÓN */
+/* ==================== */
+.menu {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Espacio entre el carrusel y el texto */
-  align-items: center;
-}
-
-.carousel-container {
-  width: 80%; 
-  height: 70vh; /* 45% de la altura de main-content */
-  position: relative;
-}
-
-.carousel {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 5px;
   width: 100%;
-  height: 100%;
+  /* Usamos un fondo oscuro acorde con la paleta */
+  background: rgba(0, 0, 0, 0.9);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(197, 164, 126, 0.3);
+}
+
+.menu a {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: #c5a47e;
+  margin: 0 1.5rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #c5a47e;
+  transition: all 0.3s ease;
+}
+
+.menu a:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* Quitar efecto hover del primer enlace (Inicio/Bienvenidos) */
+.menu a:first-child:hover::before {
+  width: 0 !important;
+}
+.menu a:first-child:hover {
+  transform: none !important;
+  background: none;
+}
+
+/* MENÚ RESPONSIVE */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .menu a {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+}
+
+/* ==================== */
+/* CONTENEDOR DE IMÁGENES CON TEXTO OVERLAY */
+/* ==================== */
+.imagen-contenedor {
+  position: relative;
+  text-align: center;
+}
+
+.imagen-contenedor img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* En este caso se mantiene el overlay para el texto "Bienvenidos" */
+.texto-sobre-imagen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Yusei Magic', sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.texto-sobre-imagen:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* ==================== */
+/* CONTENEDOR PRINCIPAL (ARTÍCULO) Y CONTENIDO BLANCO */
+/* ==================== */
+.contenedor_art1 {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: rgba(255,255,255,0.97);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(197,164,126,0.3);
+  transform-style: preserve-3d;
   position: relative;
   overflow: hidden;
 }
 
-.carousel-item {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.contenedor_art1::before {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 45%, rgba(197,164,126,0.1) 50%, transparent 55%);
+  animation: jelou-glow 8s infinite linear;
+  z-index: -1;
 }
 
-.carousel-item.active {
-  opacity: 1;
+@keyframes jelou-glow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.carousel video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.contenido-blanco {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.carousel-buttons {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.carousel-buttons button {
-  background-color: rgba(255, 255, 255, 0.5);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.text-container {
-  width: 80%;
-  height: 30vh; /* 25% de la altura de main-content */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* ==================== */
+/* SERVICIOS */
+/* ==================== */
+.servicios-container {
   text-align: center;
+  margin: 30px 0;
+  background: linear-gradient(to bottom, #6d1e24, #050106);
 }
-
-.description {
-  font-size: 1.2rem;
-  color: #d2d2d2;
-  margin-bottom: 10px;
+.titulo-servicios {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ddd;
 }
-
-/* footer.css */
-.container-flex {
+.servicios-listas {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(to bottom, #6d1e24, #050106); /* Fondo gris claro para contraste sutil */
-  padding: 20px; /* Espacio interno para el contenido */
+  justify-content: space-around;
+}
+.lista-servicios {
+  list-style: none;
+  padding: 0;
+}
+.lista-servicios li {
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.lista-servicios li:hover {
+  background-color: #ddd;
 }
 
-.logo-container {
-  flex-basis: 20%; /* Ajusta el ancho del logo */
+/* ==================== */
+/* MEDIA QUERIES */
+/* ==================== */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 2.5rem;
+  }
+  .sud {
+    font-size: 1.8rem;
+  }
+  .menu a {
+    padding: 8px 15px;
+  }
+  .caldero-container {
+    width: 90%;
+  }
+  .caldero {
+    width: 70%;
+  }
 }
 
-.text-containerr {
-  flex-basis: 80%;
-  text-align: center; /* Centra el texto horizontalmente */
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 2rem;
+  }
+  .sud {
+    font-size: 1.3rem;
+  }
+  .menu a {
+    padding: 6px 12px;
+  }
+  .caldero-container {
+    width: 100%;
+  }
+  .caldero {
+    width: 80%;
+  }
 }
-
-.text-container p {
-  font-size: 16px; /* Tamaño de la fuente */
-  color: #f5eaea; /* Color rojo suave para contraste */
-}
-
-.logo {
-  max-width: 90px; /* Ancho máximo en píxeles para pantallas medianas */
-  height: auto; /* Mantener las proporciones */
-  width: 30%; /* Ajustar el ancho al 15% del contenedor para pantallas más grandes */
-}
-
-  /* ... (resto de tu CSS) ... */
-    
-    /* Media Queries for responsiveness */
-    @media (max-width: 768px) {
-        .main-container {
-            width: 90%;
-        }
-    
-        .main-title {
-            font-size: 2.5rem;
-        }
-    
-        .profile-box, .interests-box, .skills-box, .education-box, .projects-box, .goals-box, .values-box {
-            padding: 15px;
-        }
-    
-        .image-container {
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .image-box {
-            width: 80%;
-            margin-bottom: 20px;
-        }
-    
-        h2 {
-            font-size: 1.3rem;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .main-container {
-            width: 95%;
-        }
-    
-        .main-title {
-            font-size: 2rem;
-        }
-    
-        .profile-box, .interests-box, .skills-box, .education-box, .projects-box, .goals-box, .values-box {
-            padding: 10px;
-        }
-    
-        .image-container {
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        .image-box {
-            width: 90%;
-        }
-    
-        h2 {
-            font-size: 1.2rem;
-        }
-    
-        ul {
-            margin-left: 15px;
-        }
-    }
-    
